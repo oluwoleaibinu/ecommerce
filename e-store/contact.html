@@ -30,7 +30,16 @@
     <link rel="stylesheet" href="assets/css/style.css">
     
     <!-- Modernizer JS -->
-    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="assets/js/vendor/modernizr-2.8.3.min.js">
+    function validate(){
+        if (a==null || a=="",b==null || b=="",c==null || c=="",d==null || d=="")
+        {
+            alert("Please Fill All Required Field");
+            return false;
+        }
+    }
+         
+    </script>
 </head>
 
 <body>
@@ -165,16 +174,16 @@
                 <div class="col-lg-12 col-12 mb-30">
                     <div class="contact-form-wrap">
                         <h3>Get in Touch</h3>
-                        <p>Terms & Conditions deleniti atque corrupti sdolores et quas molestias cepturi sint  eca itate non similique sunt in culpa modi tempora incidunt  obtain pain</p>
+                        <p>Information entered on this page will be used to respond to your message and to help us get the information you have requested. TEMBOW does not collect personal information for commercial marketing or distribution to any private organizations. </p>
                         <div class="contact-form">
-                            <form id="contact-form" action="assets/php/mail.php" method="post">
+                            <form action="/action_page.php"method ="post" id="contact-form" >
                                 <div class="row row-10">
-                                    <div class="col-md-6 col-12 mb-30"><input type="text" name="name" placeholder="Name"></div>
-                                    <div class="col-md-6 col-12 mb-30"><input type="email" name="email" placeholder="Email"></div>
-                                    <div class="col-md-6 col-12 mb-30"><input type="text" name="phone" placeholder="Phone"></div>
-                                    <div class="col-md-6 col-12 mb-30"><input type="text" name="subject" placeholder="Subject"></div>
-                                    <div class="col-12 mb-30"><textarea name="message" placeholder="Write message here..."></textarea></div>
-                                    <div class="col-12"><button>submit</button></div>
+                                    <div class="col-md-6 col-12 mb-30"><input type="text" name="name" placeholder="Name" id ="a" required>  </div>
+                                    <div class="col-md-6 col-12 mb-30"><input type="email" name="email" placeholder="Email" id="b"></div>
+                                    <div class="col-md-6 col-12 mb-30"><input type="text" name="phone" placeholder="Phone" id="c"></div>
+                                    <div class="col-md-6 col-12 mb-30"><input type="text" name="subject" placeholder="Subject"id= "d"></div>
+                                    <div class="col-12 mb-30"><textarea name="message" placeholder="Write message here..." id="e"></textarea></div>
+                                    <div class="col-12"><button type ="button" onsubmit= "return validate();">submit</button></div>
                                 </div>
                             </form>
                             <p class="form-messege"></p>
