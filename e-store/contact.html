@@ -60,16 +60,13 @@ $(function(){
 
     else{
     Email.send({
-    // SecureToken : "78cc6f87-3ad7-4524-99d1-05294cdc0c3e",
-    Host : "smtp.elaticemail.com",
-    Username : "oluwoleaibinu@gmail.com",
-    Password : "4c5dcd8c-a036-44b4-9d88-3026c4ec9acd",
+    SecureToken : "11b64e6f-2952-4a8f-b053-a5086cd4bee2",
     To : 'aibinuwole@yahoo.com',
     From : email.value,
     Subject : subject.value,
     Body : 'You have recieved a new order from <b>"'+name.value+'"<b><br /><h3>Body Content</h3><br />Full Name: <b>"'+name.value+'"</b><br /><br />Email: <b>"'+email.value+'"</b><br /><br />Contact: <b>"'+phone.value+'"</b><br /><br />Message: <b>"'+message.value+'"</b><br /><br />'
 }).then(
-  message => alert(message)
+  message => alert("submitted successfully")
 );
 
     }
