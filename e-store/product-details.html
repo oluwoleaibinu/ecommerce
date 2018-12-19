@@ -28,9 +28,31 @@
     
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+        <script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
     
     <!-- Modernizer JS -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <script>
+        $(function(){
+            $(".review-form").submit(function(e){
+                e.preventDefault();
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var review = $("#review").val();
+
+                if(!name || !email || !review){
+                    alert("Please fill all the fields");
+                } else {
+                    let today = new Date().toLocaleDateString();
+                    console.log(today);
+                    var newName = $("#newName").html(name);
+                    var date = $("#date").text(today);
+                    var newDesc = $("#newDesc").html(review);
+                }
+            })
+        })
+    </script>
 </head>
 
 <body>
@@ -45,7 +67,7 @@
                 <!-- Header Logo -->
                 <div class="col">
                     <div class="header-logo">
-                        <a href="index.html-2">
+                        <a href="index-2.html">
                             <img src="background/companylogo.png" alt=""> <!-- head Logo -->
                         </a>
                     </div>
@@ -243,9 +265,23 @@
                                         </div>
                                         <div class="desc">
                                             <p>Love it</p>
+                                        </div>
+                                   <div class="newReview">
+                                            <h4 class="name" id="newName"> </h4><span id="date"></span>
+                                            <div class="ratting">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            </div>
+                                            <div class="desc">
+                                            <p id="newDesc"></p>
+                                            </div>
+                                            </div>
                                             <div class="review-form">
                                                     <h3>Give your Review:</h3>
-                                                    <form action="#">
+                                                    <form action="#" class="review-form">
                                                         
                                                         <div class="ratting">
                                                             <i class="fa fa-star-o"></i>
@@ -256,9 +292,9 @@
                                                         </div>
                                                         
                                                         <div class="row row-10">
-                                                            <div class="col-md-6 col-12 mb-20"><input type="text" placeholder="Name"></div>
-                                                            <div class="col-md-6 col-12 mb-20"><input type="email" placeholder="Email"></div>
-                                                            <div class="col-12 mb-20"><textarea placeholder="Review"></textarea></div>
+                                                            <div class="col-md-6 col-12 mb-20"><input type="text" placeholder="Name" id="name"></div>
+                                                            <div class="col-md-6 col-12 mb-20"><input type="email" placeholder="Email"  id="email"></div>
+                                                            <div class="col-12 mb-20"><textarea placeholder="Review" id="review"></textarea></div>
                                                             <div class="col-12"><input type="submit" value="Submit"></div>
                                                         </div>
                                                         
