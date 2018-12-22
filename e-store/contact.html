@@ -55,18 +55,18 @@ $(function(){
     if(!name.value || !email.value || !phone.value || !subject.value || !message.value){
         alert('Please fill in all fields')
     }
-
-    // Body : 'You have recieved a new order from <b>"'+name+'"<b><br /><h3>Body Content</h3><br />Full Name: <b>"'+name+'"</b><br /><br />Email: <b>"'+email+'"</b><br /><br />Contact: <b>"'+phone+'"</b><br /><br />Message: <b>"'+message+'"</b><br /><br />'
-
     else{
     Email.send({
-    SecureToken : "11b64e6f-2952-4a8f-b053-a5086cd4bee2",
-    To : 'aibinuwole@yahoo.com',
+    SecureToken : "f957051f-8c78-45ea-acfb-17ddbd794289",
+    To : 'oluwoleaibinu@gmail.com',
     From : email.value,
     Subject : subject.value,
-    Body : 'You have recieved a new order from <b>"'+name.value+'"<b><br /><h3>Body Content</h3><br />Full Name: <b>"'+name.value+'"</b><br /><br />Email: <b>"'+email.value+'"</b><br /><br />Contact: <b>"'+phone.value+'"</b><br /><br />Message: <b>"'+message.value+'"</b><br /><br />'
+    Body : 'You have recieved a new message from <b>"'+name.value+'"<b><br /><h3>Body Content</h3><br />Full Name: <b>"'+name.value+'"</b><br /><br />Email: <b>"'+email.value+'"</b><br /><br />Contact: <b>"'+phone.value+'"</b><br /><br />Message: <b>"'+message.value+'"</b><br /><br />'
 }).then(
-  message => alert("submitted successfully")
+  message => {
+      alert("submitted successfully")
+      window.location.replace("http://tembowglobal.com");
+  }
 );
 
     }
@@ -104,9 +104,6 @@ $(function(){
                             
                             <li><a href="about.html">ABOUT </a></li>
                             <li><a href="shop.html">SHOP</a>
-                                <ul class="sub-menu">
-                                            <li><a href="product-details.html">Product Details</a></li> 
-                                    </ul>
                                 </li>
                                 <li><a href="#">PAGES</a>
                                     <ul class="sub-menu">
@@ -227,6 +224,12 @@ $(function(){
                         
                     </div>
                 </div><!-- Contact Form End -->
+        
+                <!-- map-->
+                <div class="service col-xl-6 col-md-6 col-12">
+                                <h3> <strong>Location</strong></h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d805184.6315539533!2d144.49269917339504!3d-37.9712370431694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad646b5d2ba4df7%3A0x4045675218ccd90!2sMelbourne+VIC%2C+Australia!5e0!3m2!1sen!2sng!4v1545395347003" width="1000" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
                 
             </div>
         </div>
@@ -291,7 +294,7 @@ $(function(){
                         <h3 class="title">Quick Link</h3>
                         <ul>
                                 <li><a href="about.html">About us</a></li>
-                                <li><a href="product-details.html">Shop</a></li>
+                                <li><a href="shop.html">Shop</a></li>
                                 <li><a href="checkout.html">Checkout</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                         </ul>
@@ -307,7 +310,7 @@ $(function(){
             <div class="row align-items-center">
                 
                 <div class="copyright col-lg-6 col-12">
-                    <p>Copyright &copy; <a href="#">Tembow Global Services</a>, All Rights Reserved</p>
+                    <p>Copyright &copy; 2018 Tembow Global Services, All Rights Reserved</p>
                 </div>
             </div>
         </div>
