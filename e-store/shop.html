@@ -28,27 +28,8 @@
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/minicart.js"></script>
-
-    <script>
-// Mini Cart
-// paypal.minicart.render({
-//         action: '#'
-//     });
-//     if (~window.location.search.indexOf('reset=true')) {
-//         paypal.minicart.reset();
-//     }
-$(function(){
-    $("#view_cart").click(function(){
-    paypal.minicart.render();
-
-    });
-})
-        </script>
 
     <!-- Modernizer JS -->
-    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
 <body>
@@ -98,6 +79,13 @@ $(function(){
                             <!-- <a href="wishlist.html" class="header-wishlist"><span class="icon">wishlist</span></a> -->
 
                             <!-- Cart Wrap Start-->
+                            <div class="header-cart-wrap">
+                                <!-- Cart Toggle -->
+                                <button class="header-cart-toggle">
+                                    <a href="cart.html" class="cart-item-count" data-cesta-feira-items-count></a>
+                                    <span class="icon">cart</span></button>
+
+                            </div>
 
                             <div class="col-12 d-block d-lg-none">
                                 <div class="mobile-menu"></div>
@@ -166,9 +154,24 @@ $(function(){
                                 <a class="image"><img src="assets/images/product/product-1.jpg" alt="" class="item_thumb"></a>
                                 <!-- Product Action -->
                                 <div class="product-action">
-                                        <input type="hidden" class="item_shipping" value="20" />	
-                                        <input type="hidden" class="item_quantity" value="1" />
-                                    <a href="#" class="cart item_add"><span></span></a>
+                                    <form action="/" class="form" data-cesta-feira-form>
+                                        <div class="form-group">
+                                            <input type="number" min="1" value="1" class="form-control" name="quantity"
+                                                data-cesta-feira-attribute placeholder="Quantity">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="observations"
+                                                data-cesta-feira-attribute placeholder="Observations">
+                                        </div>
+                                        <input type="hidden" value="Teritory Quentily" name="product_name"
+                                            data-cesta-feira-attribute>
+                                        <input type="hidden" value="35" name="unity_price" data-cesta-feira-attribute>
+                                        <input type="hidden" value="other" name="item_type" data-cesta-feira-attribute>
+                                        <input type="hidden" value="1" data-cesta-feira-item-id />
+                                        <input type="submit" class="btn btn-primary" value="Add to Cart" />
+                                    </form>
+<!-- 
+                                    <a href="#" class="cart item_add"><span></span></a> -->
                                 </div>
                             </div>
                             <!-- Content -->
@@ -238,24 +241,41 @@ $(function(){
         </div><!-- Footer Top Section End -->
 
         <!-- Footer Bottom Section Start -->
-    <div class="footer-bottom-section section">
-        <div class="container">
-            <div class="row align-items-center">
-                
-                <div class="copyright col-lg-6 col-12">
-                    <p>Copyright &copy; 2018 Tembow Global Services, All Rights Reserved</p>
+        <div class="footer-bottom-section section">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <div class="copyright col-lg-6 col-12">
+                        <p>Copyright &copy; 2018 Tembow Global Services, All Rights Reserved</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div><!-- Footer Bottom Section End -->
+        </div><!-- Footer Bottom Section End -->
 
     </div>
 
     <!-- JS
 ============================================ -->
+<script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="assets/js/jStorage.min.js"></script>
+<script type="text/javascript" src="assets/js/cesta-feira.js"></script>
 
-    <!-- jQuery JS -->
-    <script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
+<script type="application/javascript">
+    $(document).ready(function() {
+      $.CestaFeira({
+        debug: false,
+        onItemAdded: function (item) {
+          console.log(item);
+        },
+        onItemUpdated: function (item) {
+          console.log(item);
+        }
+      });
+    });
+  </script>
+
+<script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
     <!-- Popper JS -->
     <script src="assets/js/popper.min.js"></script>
     <!-- Bootstrap JS -->
