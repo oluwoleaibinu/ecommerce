@@ -44,7 +44,13 @@
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Modernizer JS -->
+    <style>
+        .item_thumb {
+                height: 250px !important;
+                width: 100% !important;
+            }
+        </style>
+
 </head>
 
 <body>
@@ -72,14 +78,15 @@
                                 <li><a href="index.html">HOME</a></li>
 
                                 <li><a href="about.html">ABOUT </a></li>
-                                <li><a href="Shop.html">SHOP</a>
+                                <li><a href="shop.html">SHOP</a>
                                 </li>
-                                <li><a href="#">PAGES</a>
+                                <!-- <li><a href="#">PAGES</a>
                                     <ul class="sub-menu">
                                         <li><a href="cart.html">Cart</a></li>
                                         <li><a href="checkout.html">Checkout</a></li>
                                     </ul>
-                                </li>
+                                </li> -->
+                                <li><a href="cart.html">CART</a>
                                 </li>
                                 <li><a href="contact.html">CONTACT</a></li>
                             </ul>
@@ -139,28 +146,22 @@
                                 <button class="grid active" data-mode="grid"><span>grid</span></button>
                                 <button class="list" data-mode="list"><span>list</span></button>
                             </div>
-                            <div class="product-showing mr-auto">
+                            <!-- <div class="product-showing mr-auto">
                                 <p>Showing 9 of 72</p>
-                            </div>
+                            </div> -->
                             <div class="product-short">
-                                <p>Short by</p>
-                                <select class="nice-select">
-                                    <option value="trending">Trending items</option>
-                                    <option value="sales">Best sellers</option>
-                                    <option value="rating">Best rated</option>
-                                    <option value="date">Newest items</option>
-                                    <option value="price-asc">Price: low to high</option>
-                                    <option value="price-desc">Price: high to low</option>
-                                </select>
+                                <input type="text" class="search-products" id="filter" placeholder="Search Products...">
                             </div>
                         </div>
                     </div>
                 </div><!-- Shop Toolbar End -->
 
-                <div class="shop-product-wrap grid row">
+                <div class="paging"></div>
+
+                <div class="shop-product-wrap grid row containerItems">
                     <!-- *********************************************************************************************************** -->
                     <!-- Product Item Start -->
-                    <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30">
+                    <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30 element" data-search="Bluetooth">
                         <div class="product-item">
                             <div class="product-image">
                                 <a class="image"><img src="products/iear.png" alt="" class="item_thumb"></a>
@@ -205,7 +206,7 @@
                     <!-- Product Item End -->
 
                     <!-- Product Item Start -->
-                    <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30">
+                    <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30 element" data-search="Iphone">
                         <div class="product-item">
                             <div class="product-image">
                                 <a class="image"><img src="products/iphonex.jpeg" alt="" class="item_thumb"></a>
@@ -248,7 +249,7 @@
                     <!-- Product Item End -->
 
                     <!-- Product Item Start -->
-                    <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30">
+                    <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30 element" data-search="HP">
                         <div class="product-item">
                             <div class="product-image">
                                 <a class="image"><img src="products/hp-spe.png" alt="" class="item_thumb"></a>
@@ -290,7 +291,7 @@
                     <!-- Product Item End -->
 
                     <!-- Product Item Start -->
-                    <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30">
+                    <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30 element" data-search="Apple">
                         <div class="product-item">
                             <div class="product-image">
                                 <a class="image"><img src="products/iwatch4.jpg" alt="" class="item_thumb"></a>
@@ -334,7 +335,7 @@
                     <!-- Product Item Start -->
 
                     <!-- Product Item Start -->
-                    <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30">
+                    <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30 element" data-search="Macbook">
                         <div class="product-item">
                             <div class="product-image">
                                 <a class="image"><img src="products/macbookpro.jpg" alt="" class="item_thumb"></a>
@@ -374,7 +375,7 @@
                         </div>
                     </div>
                     <!-- Product Item End -->
-                    <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30">
+                    <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30 element" data-search="Razer blade">
                         <div class="product-item">
                             <div class="product-image">
                                 <a class="image"><img src="products/razerbladepro.jpg" alt="" class="item_thumb"></a>
@@ -392,8 +393,7 @@
                                         <input type="hidden" value="Razer Blade Pro" name="product_name"
                                             data-cesta-feira-attribute>
                                         <input type="hidden" value="3699" name="unity_price" data-cesta-feira-attribute>
-                                        <input type="hidden" value="Laptop" name="item_type"
-                                            data-cesta-feira-attribute>
+                                        <input type="hidden" value="Laptop" name="item_type" data-cesta-feira-attribute>
                                         <input type="hidden" value="5" data-cesta-feira-item-id />
                                         <input type="submit" class="btn btn-primary" value="Add to Cart" />
                                     </form>
@@ -416,7 +416,7 @@
                     </div>
                     <!-- Product Item End -->
                     <!-- Product Item Start -->
-                    <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30">
+                    <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30 element" data-search="Beats">
                         <div class="product-item">
                             <div class="product-image">
                                 <a class="image"><img src="products/beats3.png" alt="" class="item_thumb"></a>
@@ -434,7 +434,8 @@
                                         <input type="hidden" value="Beats Studio3 Wireless" name="product_name"
                                             data-cesta-feira-attribute>
                                         <input type="hidden" value="400" name="unity_price" data-cesta-feira-attribute>
-                                        <input type="hidden" value="Electronics" name="item_type" data-cesta-feira-attribute>
+                                        <input type="hidden" value="Electronics" name="item_type"
+                                            data-cesta-feira-attribute>
                                         <input type="hidden" value="6" data-cesta-feira-item-id />
                                         <input type="submit" class="btn btn-primary" value="Add to Cart" />
                                     </form>
@@ -459,10 +460,12 @@
 
                 </div>
 
+                <div class="paging"></div>
+
             </div>
         </div>
-         <!-- Service Section Start -->
-         <div class="service-section section pl-30 pr-30 pl-lg-30 pr-lg-30 pl-md-30 pr-md-30">
+        <!-- Service Section Start -->
+        <div class="service-section section pl-30 pr-30 pl-lg-30 pr-lg-30 pl-md-30 pr-md-30">
             <div class="service-container">
                 <div class="row ml-0 mr-0">
 
@@ -481,9 +484,9 @@
                             <p>We ensure the product quality that is our main goal</p>
                         </div>
                     </div>
-                    </div>
-                    </div>
-                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Footer Top Section Start -->
         <div class="footer-top-section section bg-dark">
@@ -506,7 +509,6 @@
                             <ul>
                                 <li><a href="about.html">About us</a></li>
                                 <li><a href="shop.html">Shop</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
@@ -521,7 +523,7 @@
                 <div class="row align-items-center">
 
                     <div class="copyright col-lg-6 col-12">
-                        <p>Copyright &copy; 2018 Tembow Global Services, All Rights Reserved</p>
+                        <p>Copyright &copy; 2019 Tembow Global Services, All Rights Reserved</p>
                     </div>
                 </div>
             </div>
@@ -532,8 +534,44 @@
     <!-- JS
 ============================================ -->
     <script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery.paging.min.js"></script>
+    <!-- <script src="assets/js/hashchange.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-hashchange/v1.3/jquery.ba-hashchange.js"></script>
     <script type="text/javascript" src="assets/js/jStorage.min.js"></script>
     <script type="text/javascript" src="assets/js/cesta-feira.js"></script>
+    <!-- <script type="text/javascript" src="assets/js/e-search.js"></script> -->
+
+    <script type="text/javascript">
+        // $(function () {
+        //     $('.search-products').search();
+        // })
+
+        $(document).ready(function () {
+            $("#filter").keyup(function () {
+
+                // Retrieve the input field text and reset the count to zero
+                var filter = $(this).val(), count = 0;
+
+                // Loop through the comment list
+                $(".shop-product-wrap .element").each(function () {
+
+                    // If the list item does not contain the text phrase fade it out
+                    if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+                        $(this).fadeOut();
+
+                        // Show the list item if the phrase matches and increase the count by 1
+                    } else {
+                        $(this).show();
+                        count++;
+                    }
+                });
+
+                // Update the count
+                // var numberItems = count;
+                // $("#filter-count").text("Number of Comments = "+count);
+            });
+        });
+    </script>
 
     <script type="application/javascript">
         $(document).ready(function () {
@@ -547,6 +585,103 @@
                 }
             });
         });
+    </script>
+
+    <script>
+        (function () {
+
+            var prev = {
+                start: 0,
+                stop: 0
+            };
+
+
+            var content = $('.element');
+
+            var Paging = $(".paging").paging(content.length, {
+                onSelect: function () {
+
+                    var data = this.slice;
+
+                    content.slice(prev[0], prev[1]).css('display', 'none');
+                    content.slice(data[0], data[1]).fadeIn("slow");
+
+                    prev = data;
+
+                    return true; // locate!
+                },
+                onFormat: function (type) {
+
+                    switch (type) {
+
+                        case 'block':
+
+                            if (!this.active)
+                                return '<span class="disabled">' + this.value + '</span>';
+                            else if (this.value != this.page)
+                                return '<em><a href="#' + this.value + '">' + this.value + '</a></em>';
+                            return '<span class="current">' + this.value + '</span>';
+
+                        case 'right':
+                        case 'left':
+
+                            if (!this.active) {
+                                return '';
+                            }
+                            return '<a href="#' + this.value + '">' + this.value + '</a>';
+
+                        case 'next':
+
+                            if (this.active) {
+                                return '<a href="#' + this.value + '" class="next">Next &raquo;</a>';
+                            }
+                            return '<span class="disabled">Next &raquo;</span>';
+
+                        case 'prev':
+
+                            if (this.active) {
+                                return '<a href="#' + this.value + '" class="prev">&laquo; Previous</a>';
+                            }
+                            return '<span class="disabled">&laquo; Previous</span>';
+
+                        case 'first':
+
+                            if (this.active) {
+                                return '<a href="#' + this.value + '" class="first">|&lt;</a>';
+                            }
+                            return '<span class="disabled">|&lt;</span>';
+
+                        case 'last':
+
+                            if (this.active) {
+                                return '<a href="#' + this.value + '" class="prev">&gt;|</a>';
+                            }
+                            return '<span class="disabled">&gt;|</span>';
+
+                        case 'fill':
+                            if (this.active) {
+                                return "...";
+                            }
+                    }
+                    return ""; // return nothing for missing branches
+                },
+                format: '[< ncnnn! >]',
+                perpage: 10,
+                lapping: 0,
+                page: null // we await hashchange() event
+            });
+
+
+            $(window).hashchange(function () {
+
+                if (window.location.hash)
+                    Paging.setPage(window.location.hash.substr(1));
+                else
+                    Paging.setPage(1); // we dropped "page" support and need to run it by hand
+            });
+
+            $(window).hashchange();
+        })();
     </script>
 
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
